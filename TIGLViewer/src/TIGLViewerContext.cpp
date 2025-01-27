@@ -39,6 +39,7 @@
 #include "AIS_TexturedShape.hxx"
 #include "AIS_InteractiveContext.hxx"
 #include "BRepBuilderAPI_MakeVertex.hxx"
+#include "BRepPrimAPI_MakeBox.hxx"
 
 #include <OpenGl_GraphicDriver.hxx>
 // Shader related stuff
@@ -595,4 +596,12 @@ InteractiveShapeManager& TIGLViewerContext::GetShapeManager()
 }
 
 
-
+void TIGLViewerContext::displayBox()
+{
+       gp_Pnt corner1 = gp_Pnt(0.,0.,0.);
+       Standard_Real len_x = 10.;
+       Standard_Real len_y = 10.;
+       Standard_Real len_z = 10.;
+       TopoDS_Shape box = BRepPrimAPI_MakeBox(corner1, len_x, len_y, len_z);
+       displayShape(box, Standard_True);
+}

@@ -78,6 +78,8 @@ public:
                        Standard_Real aZoffset,
                        Standard_Real TextScale);
 
+    void displayBox();
+
     bool hasSelectedShapes() const;
 
     void updateViewer();

@@ -64,7 +64,7 @@
      <x>0</x>
      <y>0</y>
      <width>783</width>
-     <height>20</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="fileMenu">
@@ -229,6 +229,7 @@
      </property>
      <addaction name="drawPointAction"/>
      <addaction name="drawVectorAction"/>
+     <addaction name="drawBoxAction"/>
     </widget>
     <addaction name="menuAircraft"/>
     <addaction name="menuRotorcraft"/>
@@ -376,6 +377,11 @@
     </layout>
    </widget>
   </widget>
+  <action name="drawBoxAction">
+   <property name="text">
+    <string>Draw Box</string>
+   </property>
+  </action>
   <action name="newAction">
    <property name="text">
     <string>&amp;New</string>

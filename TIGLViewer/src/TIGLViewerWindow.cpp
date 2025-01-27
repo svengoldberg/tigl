@@ -54,6 +54,7 @@
 #include "CCPACSConfigurationManager.h"
 
 #include <cstdlib>
+#include "TIGLViewerContext.h"
 
 namespace
 {
@@ -682,6 +683,7 @@ void TIGLViewerWindow::connectSignals()
     // Misc drawing actions
     connect(drawPointAction, SIGNAL(triggered()), this, SLOT(drawPoint()));
     connect(drawVectorAction, SIGNAL(triggered()), this, SLOT(drawVector()));
+    connect(drawBoxAction, SIGNAL(triggered()), this, SLOT(drawBox()));
     
 
     // view->actions menu
@@ -943,4 +945,9 @@ bool TIGLViewerWindow::deleteEnvVar(const char * varName)
     char *envVar = qstrdup(buffer.constData());
     return putenv(envVar) == 0;
 #endif
+}
+
+void TIGLViewerWindow::drawBox()
+{
+       getScene()->displayBox();
 }
